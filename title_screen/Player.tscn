@@ -1,0 +1,97 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://hero/deddd.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=3]
+[ext_resource path="res://hero/ergnertkg ;,etr.png" type="Texture" id=4]
+[ext_resource path="res://hero/ezfefzrez.png" type="Texture" id=5]
+[ext_resource path="res://hero/ernlngerlnglreng.png" type="Texture" id=6]
+[ext_resource path="res://hero/rvreerg.png" type="Texture" id=7]
+[ext_resource path="res://hero/Untitldvszdved.png" type="Texture" id=8]
+[ext_resource path="res://hero/jknerjzefzfer.png" type="Texture" id=9]
+[ext_resource path="res://hero/efe.png" type="Texture" id=10]
+[ext_resource path="res://hero/Untitledvd.png" type="Texture" id=11]
+[ext_resource path="res://hero/ezffe.png" type="Texture" id=12]
+[ext_resource path="res://hero/kzefze ;fezf.png" type="Texture" id=13]
+[ext_resource path="res://hero/regertvbtrfebgter'.png" type="Texture" id=14]
+[ext_resource path="res://hero/rttrb.png" type="Texture" id=15]
+[ext_resource path="res://hero/ez.png" type="Texture" id=16]
+[ext_resource path="res://hero/Unsedcvdzenrfkerhstitled.png" type="Texture" id=17]
+[ext_resource path="res://hero/Untitlescsded.png" type="Texture" id=18]
+[ext_resource path="res://hero/Untitdefled.png" type="Texture" id=19]
+[ext_resource path="res://hero/zebkfbzekjbfkebrkbk.png" type="Texture" id=20]
+[ext_resource path="res://hero/Untitlzezezeed.png" type="Texture" id=21]
+[ext_resource path="res://hero/Untitlzefezed.png" type="Texture" id=22]
+[ext_resource path="res://hero/Untitleddvdd.png" type="Texture" id=23]
+[ext_resource path="res://hero/errfg.png" type="Texture" id=24]
+[ext_resource path="res://hero/eznfzerkbgrke.png" type="Texture" id=25]
+[ext_resource path="res://hero/erbfregrree.png" type="Texture" id=26]
+[ext_resource path="res://hero/zef.png" type="Texture" id=27]
+[ext_resource path="res://hero/Unsedcvdstitled.png" type="Texture" id=28]
+[ext_resource path="res://hero/dvreszrdd.png" type="Texture" id=29]
+[ext_resource path="res://hero/fefbvdfbrrdebredbtr.png" type="Texture" id=30]
+[ext_resource path="res://hero/nkzerjf.png" type="Texture" id=31]
+[ext_resource path="res://hero/nlergrnelernglner.png" type="Texture" id=32]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 25, 28 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25, 28 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 29 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2( 512, 320 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.25
+drag_margin_top = 0.25
+drag_margin_right = 0.25
+drag_margin_bottom = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 6 )
+animation = "left"

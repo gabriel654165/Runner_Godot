@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "box",
+"language": "GDScript",
+"path": "res://Box.gd"
+}, {
+"base": "box",
+"class": "gridbox",
+"language": "GDScript",
+"path": "res://physics/Grid.gd"
+}, {
+"base": "box",
+"class": "physics_box",
+"language": "GDScript",
+"path": "res://physics/Physics box.gd"
+} ]
+_global_script_class_icons={
+"box": "",
+"gridbox": "",
+"physics_box": ""
+}
+
+[application]
+
+config/name="Minijeu_Gabriel"
+run/main_scene="res://wolrd.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+window/size/always_on_top=true
+
+[input]
+
+space={
+"deadzone": 0.5,
+"events": [  ]
+}
+
+[rendering]
+
+environment/default_clear_color=Color( 0.14902, 0.192157, 0.211765, 1 )
+environment/default_environment="res://default_env.tres"
